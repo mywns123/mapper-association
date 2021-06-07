@@ -5,6 +5,26 @@ select * from COURSES;
 select * from COURSE_ENROLLMENT;
 select * from user_pics;
 
+select course_id, stud_id from COURSE_ENROLLMENT;
+
+select c.course_id, c.name as cname, c.description, c.start_date, c.end_date, s.stud_id, s.name, s.email 
+from COURSE_ENROLLMENT ce join courses c ON ce.course_id  = c.course_id 
+	join  students s on ce.stud_id  = s.stud_id 
+where ce.course_id = 2 and ce.stud_id = 2;
+
+
+
+insert into COURSE_ENROLLMENT values(3, 1);
+
+update  course_enrollment  
+set course_id = 3, stud_id = 2
+where course_id=3 and stud_id =1;
+
+delete 
+from course_enrollment 
+where course_id = 3 and stud_id = 2;
+
+
 delete  from user_pics where id >2;
 delete  from  students where stud_id >2;
 delete from tutors where tutor_id = 5;

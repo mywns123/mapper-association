@@ -19,13 +19,14 @@ import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 public class ContextDataSourceTest {
 	private static final Log log = LogFactory.getLog(ContextDataSource.class);
 
+	@Autowired
+	private DataSource dataSource;
+	
 	@After
 	public void tearDown() throws Exception {
 		System.out.println();
 	}
 
-	@Autowired
-	private DataSource dataSource;
 
 	@Test
 	public void testDataSource() throws SQLException {

@@ -1130,3 +1130,411 @@
 [DEBUG] [2021-05-14 15:27] tutor=Ken, total=1
 [DEBUG] [2021-05-14 15:27] tutor=Paul, total=0
 [DEBUG] [2021-05-14 15:27] tutor=Mike, total=0
+[DEBUG] [2021-06-04 11:49] testDataSource()
+[DEBUG] [2021-06-04 11:49] DataSource HikariDataSource (HikariPool-1)
+[DEBUG] [2021-06-04 11:49] LoginTimeout 30
+[DEBUG] [2021-06-04 11:49] testOpenSession()
+[DEBUG] [2021-06-04 11:49] session org.apache.ibatis.session.defaults.DefaultSqlSession@3607b97d
+[DEBUG] [2021-06-04 11:49] test01SelectCourseByCondition()
+[DEBUG] [2021-06-04 11:49] ==>  Preparing: select course_id, name, description, start_date, end_date, tutor_id from courses WHERE tutor_id = ?
+[DEBUG] [2021-06-04 11:49] ==> Parameters: 1(Integer)
+[DEBUG] [2021-06-04 11:49] test02SelectCourseByCondition()
+[DEBUG] [2021-06-04 11:49] ==>  Preparing: select course_id, name, description, start_date, end_date, tutor_id from courses WHERE name like ?
+[DEBUG] [2021-06-04 11:49] ==> Parameters: %java%(String)
+[DEBUG] [2021-06-04 11:49] test03SelectCourseByCondition()
+[DEBUG] [2021-06-04 11:49] ==>  Preparing: select course_id, name, description, start_date, end_date, tutor_id from courses WHERE start_date >= ?
+[DEBUG] [2021-06-04 11:49] ==> Parameters: 2013-02-01 00:00:00.0(Timestamp)
+[DEBUG] [2021-06-04 11:49] test04SelectCaseCourses()
+[DEBUG] [2021-06-04 11:49] ==>  Preparing: select course_id, name, description, start_date, end_date, tutor_id from courses where tutor_id = ?
+[DEBUG] [2021-06-04 11:49] ==> Parameters: 1(Integer)
+[DEBUG] [2021-06-04 11:49] test05SelectWhereCourses()
+[DEBUG] [2021-06-04 11:49] ==>  Preparing: select course_id, name, description, start_date, end_date, tutor_id from courses
+[DEBUG] [2021-06-04 11:49] ==> Parameters: 
+[DEBUG] [2021-06-04 11:49] test06SelectWhereCourses()
+[DEBUG] [2021-06-04 11:49] ==>  Preparing: select course_id, name, description, start_date, end_date, tutor_id from courses
+[DEBUG] [2021-06-04 11:49] ==> Parameters: 
+[DEBUG] [2021-06-04 11:49] test07SelectCoursesForeachbyTutors()
+[DEBUG] [2021-06-04 11:49] ==>  Preparing: select course_id, name, description, start_date, end_date, tutor_id from courses WHERE tutor_id IN ( ? , ? )
+[DEBUG] [2021-06-04 11:49] ==> Parameters: 1(Integer), 2(Integer)
+[DEBUG] [2021-06-04 11:49] test08insertCourses()
+[DEBUG] [2021-06-04 11:49] ==>  Preparing: insert into courses(course_id, name, description, start_date, end_date, tutor_id) values (?,?,?,?,?,?) , (?,?,?,?,?,?) , (?,?,?,?,?,?)
+[DEBUG] [2021-06-04 11:49] ==> Parameters: 4(Integer), mysql(String), database(String), 2021-06-04 11:49:55.694(Timestamp), 2021-06-04 11:49:55.694(Timestamp), 3(Integer), 5(Integer), mysql(String), database(String), 2021-06-04 11:49:55.694(Timestamp), 2021-06-04 11:49:55.694(Timestamp), 3(Integer), 6(Integer), mariaDb(String), database(String), 2021-06-04 11:49:55.694(Timestamp), 2021-06-04 11:49:55.694(Timestamp), 4(Integer)
+[DEBUG] [2021-06-04 11:49] test09deleteCourses()
+[DEBUG] [2021-06-04 11:49] ==>  Preparing: delete from courses where course_id IN ( ? , ? , ? )
+[DEBUG] [2021-06-04 11:49] ==> Parameters: 4(Integer), 5(Integer), 6(Integer)
+[DEBUG] [2021-06-04 11:49] test10updateSetCourses()
+[DEBUG] [2021-06-04 11:49] ==>  Preparing: update Courses SET tutor_id = ? where course_id = ?
+[DEBUG] [2021-06-04 11:49] ==> Parameters: 4(Integer), 1(Integer)
+[DEBUG] [2021-06-04 11:49] test11InsertCourse()
+[DEBUG] [2021-06-04 11:49] ==>  Preparing: insert into courses(course_id, name, description, start_date, end_date, tutor_id) values (?,?,?,?,?,?)
+[DEBUG] [2021-06-04 11:49] ==> Parameters: 7(Integer), oracle(String), database(String), 2021-06-04 11:49:55.728(Timestamp), 2021-06-04 11:49:55.728(Timestamp), 4(Integer)
+[DEBUG] [2021-06-04 11:49] test12DeleteCourse()
+[DEBUG] [2021-06-04 11:49] ==>  Preparing: delete from courses where course_id = ?
+[DEBUG] [2021-06-04 11:49] ==> Parameters: 7(Integer)
+[DEBUG] [2021-06-04 11:49] testGetCourseCountByTutor()
+[DEBUG] [2021-06-04 11:49] ==>  Preparing: {call course_total(1)}
+[DEBUG] [2021-06-04 11:49] ==> Parameters: 
+[DEBUG] [2021-06-04 11:49] testGetCourseCountByTutors()
+[DEBUG] [2021-06-04 11:49] ==>  Preparing: {call course_total_group}
+[DEBUG] [2021-06-04 11:49] ==> Parameters: 
+[DEBUG] [2021-06-04 11:49] test02SelectStudentById()
+[DEBUG] [2021-06-04 11:49] ==>  Preparing: select stud_id, name, email, dob, phone , gender from STUDENTS WHERE stud_id = ?
+[DEBUG] [2021-06-04 11:49] ==> Parameters: 1(Integer)
+[DEBUG] [2021-06-04 11:49] test03insertStudent()
+[DEBUG] [2021-06-04 11:49] ==>  Preparing: insert into students(stud_id, name, email, phone, dob ) values(?, ?, ?, ?, ?)
+[DEBUG] [2021-06-04 11:49] ==> Parameters: 3(Integer), È«±æµ¿3(String), lee@test.co.kr(String), 010-1234-1234(String), 1990-03-28 11:49:55.844(Timestamp)
+[DEBUG] [2021-06-04 11:49] test04updateStudent()
+[DEBUG] [2021-06-04 11:49] ==>  Preparing: update students set name = ? , email =? , phone = ? , dob = ? WHERE stud_id = ?
+[DEBUG] [2021-06-04 11:49] ==> Parameters: Timothy(String), test@test.co.kr(String), 987-1234-1234(String), 2021-06-04 11:49:55.855(Timestamp), 1(Integer)
+[DEBUG] [2021-06-04 11:49] test05deleteStudent()
+[DEBUG] [2021-06-04 11:49] ==>  Preparing: delete from students WHERE stud_id = ?
+[DEBUG] [2021-06-04 11:49] ==> Parameters: 3(Integer)
+[DEBUG] [2021-06-04 11:49] test06SelectStudentByIdWithResultMap()
+[DEBUG] [2021-06-04 11:49] ==>  Preparing: select stud_id, name, email, dob, gender, substring(phone,1,3)as f, substring(phone,5,3)as m, substring(phone,9,4)as l from STUDENTS WHERE stud_id = ?
+[DEBUG] [2021-06-04 11:49] ==> Parameters: 1(Integer)
+[DEBUG] [2021-06-04 11:49] test07SelectStudentByAllForListHashmap()
+[DEBUG] [2021-06-04 11:49] ==>  Preparing: select stud_id, name, email, dob, phone , gender from STUDENTS
+[DEBUG] [2021-06-04 11:49] ==> Parameters: 
+[DEBUG] [2021-06-04 11:49] test08selectStudentByIdAssociation()
+[DEBUG] [2021-06-04 11:49] ==>  Preparing: select stud_id, name, email, phone, dob, gender, a.addr_id, street, city, state, zip, country from STUDENTS s join addresses a on s.addr_id = a.addr_id WHERE stud_id = ?
+[DEBUG] [2021-06-04 11:49] ==> Parameters: 1(Integer)
+[DEBUG] [2021-06-04 11:49] test09insertEnumStudent()
+[DEBUG] [2021-06-04 11:49] ==>  Preparing: insert into students(stud_id, name, email, phone, dob, gender) values(?, ?, ?, ?, ?, ?)
+[DEBUG] [2021-06-04 11:49] ==> Parameters: 3(Integer), test(String), test@test.co.kr(String), 010-1234-1234(String), 1990-03-28 11:49:55.934(Timestamp), 0(Integer)
+[DEBUG] [2021-06-04 11:49] test10selectStudentByAll()
+[DEBUG] [2021-06-04 11:49] ==>  Preparing: select stud_id, name, email, dob, phone , gender from STUDENTS
+[DEBUG] [2021-06-04 11:49] ==> Parameters: 
+[DEBUG] [2021-06-04 11:49] test11deleteStudent()
+[DEBUG] [2021-06-04 11:49] ==>  Preparing: delete from students WHERE stud_id = ?
+[DEBUG] [2021-06-04 11:49] ==> Parameters: 3(Integer)
+[DEBUG] [2021-06-04 11:49] test12selectStudentByMap()
+[DEBUG] [2021-06-04 11:49] ==>  Preparing: select stud_id, name, email, dob, phone , gender from STUDENTS WHERE name = ? And email = ?
+[DEBUG] [2021-06-04 11:49] ==> Parameters: Timothy(String), test@test.co.kr(String)
+[DEBUG] [2021-06-04 11:49] test13selectAllStudentByMap()
+[DEBUG] [2021-06-04 11:49] ==>  Preparing: select stud_id, name, email, dob, phone , gender from STUDENTS WHERE name = ? And email = ?
+[DEBUG] [2021-06-04 11:49] ==> Parameters: Timothy(String), test@test.co.kr(String)
+[DEBUG] [2021-06-04 11:49] test14updateSetStudent()
+[DEBUG] [2021-06-04 11:49] ==>  Preparing: update students SET phone = ?, dob = ? WHERE stud_id = ?
+[DEBUG] [2021-06-04 11:49] ==> Parameters: 987-654-3211(String), 2021-06-04 11:49:55.97(Timestamp), 1(Integer)
+[DEBUG] [2021-06-04 11:49] test01SelectTutorByTutorId()
+[DEBUG] [2021-06-04 11:49] ==>  Preparing: select t.tutor_id, t.name as tutor_name, email, c.course_id, c.name, description, start_date, end_date from tutors t left join courses c on t.tutor_id= c.tutor_id where t.tutor_id= ?
+[DEBUG] [2021-06-04 11:49] ==> Parameters: 1(Integer)
+[DEBUG] [2021-06-04 11:49] test02InsertTutor()
+[DEBUG] [2021-06-04 11:49] ==>  Preparing: insert into tutors (tutor_id, name, email, phone, addr_id) values (?, ?, ?, ?, ?)
+[DEBUG] [2021-06-04 11:49] ==> Parameters: 5(Integer), mskim(String), net94@naver.com(String), 010-2222-2222(String), 2(Integer)
+[DEBUG] [2021-06-04 11:49] test03DeleteTutor()
+[DEBUG] [2021-06-04 11:49] ==>  Preparing: delete from tutors where tutor_id = ?
+[DEBUG] [2021-06-04 11:49] ==> Parameters: 5(Integer)
+[DEBUG] [2021-06-04 11:49] test01InsertUserPic()
+[DEBUG] [2021-06-04 11:49] ==>  Preparing: insert into user_pics(id, name, pic, bio) values (?, ?, ?, ?)
+[DEBUG] [2021-06-04 11:49] ==> Parameters: 2(Integer), LeeYouYong(String), null, put some lengthy bio here(String)
+[DEBUG] [2021-06-04 11:49] test02GetUserPic()
+[DEBUG] [2021-06-04 11:49] ==>  Preparing: select id, name, pic, bio from user_pics where id = ?
+[DEBUG] [2021-06-04 11:49] ==> Parameters: 1(Integer)
+[DEBUG] [2021-06-04 11:49] test03DeleteUserPic()
+[DEBUG] [2021-06-04 11:49] ==>  Preparing: delete from user_pics where id = ?
+[DEBUG] [2021-06-04 11:49] ==> Parameters: 2(Integer)
+[DEBUG] [2021-06-04 11:49] testSelectStudentForMap()
+[DEBUG] [2021-06-04 11:49] ==>  Preparing: select stud_id, name, email, dob, phone , gender from STUDENTS WHERE stud_id = ?
+[DEBUG] [2021-06-04 11:49] ==> Parameters: 1(Integer)
+[DEBUG] [2021-06-04 11:49] testSelectStudentForMap2()
+[DEBUG] [2021-06-04 11:49] ==>  Preparing: select stud_id, name, email, dob, phone , gender from STUDENTS WHERE stud_id = ?
+[DEBUG] [2021-06-04 11:49] ==> Parameters: 1(Integer)
+[DEBUG] [2021-06-04 11:49] ==>  Preparing: select stud_id, name, email, dob, phone , gender from STUDENTS
+[DEBUG] [2021-06-04 11:49] ==> Parameters: 
+[DEBUG] [2021-06-04 11:49] test01TrJoinTutorAndCourse_FailTutor()
+[DEBUG] [2021-06-04 11:49] ==>  Preparing: insert into tutors (tutor_id, name, email, phone, addr_id) values (?, ?, ?, ?, ?)
+[DEBUG] [2021-06-04 11:49] ==> Parameters: 1(Integer), mskim(String), net94@naver.com(String), 010-2222-2222(String), 2(Integer)
+[DEBUG] [2021-06-04 11:49] test02TrJoinTutorAndCourse_FailCourse()
+[DEBUG] [2021-06-04 11:49] ==>  Preparing: insert into tutors (tutor_id, name, email, phone, addr_id) values (?, ?, ?, ?, ?)
+[DEBUG] [2021-06-04 11:49] ==> Parameters: 5(Integer), mskim(String), net94@naver.com(String), 010-2222-2222(String), 2(Integer)
+[DEBUG] [2021-06-04 11:49] test03TrJoinTutorAndCourse_Success()
+[DEBUG] [2021-06-04 11:49] ==>  Preparing: insert into tutors (tutor_id, name, email, phone, addr_id) values (?, ?, ?, ?, ?)
+[DEBUG] [2021-06-04 11:49] ==> Parameters: 5(Integer), mskim(String), net94@naver.com(String), 010-2222-2222(String), 2(Integer)
+[DEBUG] [2021-06-04 11:49] test04TrRemoveTutorAndCourse_FailTutor()
+[DEBUG] [2021-06-04 11:49] ==>  Preparing: delete from courses where course_id = ?
+[DEBUG] [2021-06-04 11:49] ==> Parameters: 8(Integer)
+[DEBUG] [2021-06-04 11:49] test05TrRemoveTutorAndCourse_FailCourse()
+[DEBUG] [2021-06-04 11:49] ==>  Preparing: delete from courses where course_id = ?
+[DEBUG] [2021-06-04 11:49] ==> Parameters: 10(Integer)
+[DEBUG] [2021-06-04 11:49] test06TrRemoveTutorAndCourse_Success()
+[DEBUG] [2021-06-04 11:49] ==>  Preparing: delete from courses where course_id = ?
+[DEBUG] [2021-06-04 11:49] ==> Parameters: 8(Integer)
+[DEBUG] [2021-06-04 12:45] test01SelectCourseByCondition()
+[DEBUG] [2021-06-04 12:45] test02SelectCourseByCondition()
+[DEBUG] [2021-06-04 12:45] test03SelectCourseByCondition()
+[DEBUG] [2021-06-04 12:45] test04SelectCaseCourses()
+[DEBUG] [2021-06-04 12:45] test05SelectWhereCourses()
+[DEBUG] [2021-06-04 12:45] test06SelectWhereCourses()
+[DEBUG] [2021-06-04 12:45] test07SelectCoursesForeachbyTutors()
+[DEBUG] [2021-06-04 12:45] test08insertCourses()
+[DEBUG] [2021-06-04 12:45] test09deleteCourses()
+[DEBUG] [2021-06-04 12:45] test10updateSetCourses()
+[DEBUG] [2021-06-04 12:45] test11InsertCourse()
+[DEBUG] [2021-06-04 12:45] test12DeleteCourse()
+[DEBUG] [2021-06-04 12:45] testGetCourseCountByTutor()
+[DEBUG] [2021-06-04 12:45] testGetCourseCountByTutors()
+[DEBUG] [2021-06-04 12:45] test02SelectStudentById()
+[DEBUG] [2021-06-04 12:45] test03insertStudent()
+[DEBUG] [2021-06-04 12:45] test04updateStudent()
+[DEBUG] [2021-06-04 12:45] test05deleteStudent()
+[DEBUG] [2021-06-04 12:45] test06SelectStudentByIdWithResultMap()
+[DEBUG] [2021-06-04 12:45] test07SelectStudentByAllForListHashmap()
+[DEBUG] [2021-06-04 12:45] test08selectStudentByIdAssociation()
+[DEBUG] [2021-06-04 12:45] test09insertEnumStudent()
+[DEBUG] [2021-06-04 12:45] test10selectStudentByAll()
+[DEBUG] [2021-06-04 12:45] test11deleteStudent()
+[DEBUG] [2021-06-04 12:45] test12selectStudentByMap()
+[DEBUG] [2021-06-04 12:45] test13selectAllStudentByMap()
+[DEBUG] [2021-06-04 12:45] test14updateSetStudent()
+[DEBUG] [2021-06-04 12:45] test01SelectTutorByTutorId()
+[DEBUG] [2021-06-04 12:45] test02InsertTutor()
+[DEBUG] [2021-06-04 12:45] test03DeleteTutor()
+[DEBUG] [2021-06-04 12:45] test01InsertUserPic()
+[DEBUG] [2021-06-04 12:45] test02GetUserPic()
+[DEBUG] [2021-06-04 12:45] test03DeleteUserPic()
+[DEBUG] [2021-06-04 12:45] testSelectStudentForMap()
+[DEBUG] [2021-06-04 12:45] testSelectStudentForMap2()
+[DEBUG] [2021-06-04 12:45] test01TrJoinTutorAndCourse_FailTutor()
+[DEBUG] [2021-06-04 12:45] test02TrJoinTutorAndCourse_FailCourse()
+[DEBUG] [2021-06-04 12:45] test03TrJoinTutorAndCourse_Success()
+[DEBUG] [2021-06-04 12:45] test04TrRemoveTutorAndCourse_FailTutor()
+[DEBUG] [2021-06-04 12:45] test05TrRemoveTutorAndCourse_FailCourse()
+[DEBUG] [2021-06-04 12:45] test06TrRemoveTutorAndCourse_Success()
+[DEBUG] [2021-06-04 12:45] testDataSource()
+[DEBUG] [2021-06-04 12:45] DataSource HikariDataSource (HikariPool-1)
+[DEBUG] [2021-06-04 12:45] LoginTimeout 30
+[DEBUG] [2021-06-04 12:45] testOpenSession()
+[DEBUG] [2021-06-04 12:45] session org.apache.ibatis.session.defaults.DefaultSqlSession@38b0395c
+[DEBUG] [2021-06-04 16:00] testDataSource()
+[DEBUG] [2021-06-04 16:00] DataSource HikariDataSource (HikariPool-1)
+[DEBUG] [2021-06-04 16:00] LoginTimeout 30
+[DEBUG] [2021-06-04 16:01] testOpenSession()
+[DEBUG] [2021-06-04 16:01] session org.apache.ibatis.session.defaults.DefaultSqlSession@6b54655f
+[DEBUG] [2021-06-04 16:01] test01SelctCourseErollmentById()
+[DEBUG] [2021-06-04 16:05] test01SelctCourseErollmentById()
+[DEBUG] [2021-06-04 16:05] test01SelctCourseErollmentById()
+[DEBUG] [2021-06-04 16:05] test01SelctCourseErollmentById()
+[DEBUG] [2021-06-04 16:10] test02InsertCourseErollment()
+[DEBUG] [2021-06-04 16:12] test02InsertCourseErollment()
+[DEBUG] [2021-06-04 16:14] test02InsertCourseErollment()
+[DEBUG] [2021-06-04 16:14] ==>  Preparing: insert into COURSE_ENROLLMENT(course_id, stud_id) values(?, ?);
+[DEBUG] [2021-06-04 16:14] ==> Parameters: 1(Integer), 3(Integer)
+[DEBUG] [2021-06-04 16:14] ==>  Preparing: delete from course_enrollment where course_id = ? and stud_id = ?
+[DEBUG] [2021-06-04 16:14] ==> Parameters: 1(Integer), 3(Integer)
+[DEBUG] [2021-06-04 16:14] <==    Updates: 0
+[DEBUG] [2021-06-04 16:14] test01SelctCourseErollmentById()
+[DEBUG] [2021-06-04 16:14] ==>  Preparing: select c.course_id, c.name as cname, c.description, c.start_date, c.end_date, s.stud_id, s.name, s.email from COURSE_ENROLLMENT ce join courses c ON ce.course_id = c.course_id join students s on ce.stud_id = s.stud_id where ce.course_id = ? and ce.stud_id = ?
+[DEBUG] [2021-06-04 16:14] ==> Parameters: 1(Integer), 1(Integer)
+[DEBUG] [2021-06-04 16:14] test02InsertCourseErollment()
+[DEBUG] [2021-06-04 16:14] ==>  Preparing: insert into COURSE_ENROLLMENT(course_id, stud_id) values(?, ?);
+[DEBUG] [2021-06-04 16:14] ==> Parameters: 1(Integer), 3(Integer)
+[DEBUG] [2021-06-04 16:14] ==>  Preparing: delete from course_enrollment where course_id = ? and stud_id = ?
+[DEBUG] [2021-06-04 16:14] ==> Parameters: 1(Integer), 3(Integer)
+[DEBUG] [2021-06-04 16:14] <==    Updates: 0
+[DEBUG] [2021-06-04 16:15] testDataSource()
+[DEBUG] [2021-06-04 16:15] DataSource HikariDataSource (HikariPool-1)
+[DEBUG] [2021-06-04 16:15] LoginTimeout 30
+[DEBUG] [2021-06-04 16:15] testOpenSession()
+[DEBUG] [2021-06-04 16:15] session org.apache.ibatis.session.defaults.DefaultSqlSession@75ce184a
+[DEBUG] [2021-06-04 16:15] test01SelctCourseErollmentById()
+[DEBUG] [2021-06-04 16:15] ==>  Preparing: select c.course_id, c.name as cname, c.description, c.start_date, c.end_date, s.stud_id, s.name, s.email from COURSE_ENROLLMENT ce join courses c ON ce.course_id = c.course_id join students s on ce.stud_id = s.stud_id where ce.course_id = ? and ce.stud_id = ?
+[DEBUG] [2021-06-04 16:15] ==> Parameters: 1(Integer), 1(Integer)
+[DEBUG] [2021-06-04 16:15] test02InsertCourseErollment()
+[DEBUG] [2021-06-04 16:15] ==>  Preparing: insert into COURSE_ENROLLMENT(course_id, stud_id) values(?, ?);
+[DEBUG] [2021-06-04 16:15] ==> Parameters: 1(Integer), 3(Integer)
+[DEBUG] [2021-06-04 16:15] ==>  Preparing: update course_enrollment set course_id = ?, stud_id = ? where course_id = ? and stud_id = ?
+[DEBUG] [2021-06-04 16:15] ==> Parameters: null, null, null, null
+[DEBUG] [2021-06-04 16:15] <==    Updates: 0
+[DEBUG] [2021-06-04 16:15] ==>  Preparing: delete from course_enrollment where course_id = ? and stud_id = ?
+[DEBUG] [2021-06-04 16:15] ==> Parameters: 1(Integer), 3(Integer)
+[DEBUG] [2021-06-04 16:15] <==    Updates: 0
+[DEBUG] [2021-06-04 16:16] test01SelctCourseErollmentById()
+[DEBUG] [2021-06-04 16:16] ==>  Preparing: select c.course_id, c.name as cname, c.description, c.start_date, c.end_date, s.stud_id, s.name, s.email from COURSE_ENROLLMENT ce join courses c ON ce.course_id = c.course_id join students s on ce.stud_id = s.stud_id where ce.course_id = ? and ce.stud_id = ?
+[DEBUG] [2021-06-04 16:16] ==> Parameters: 1(Integer), 1(Integer)
+[TRACE] [2021-06-04 16:16] <==    Columns: course_id, cname, description, start_date, end_date, stud_id, name, email
+[TRACE] [2021-06-04 16:16] <==        Row: 1, Quickstart Core Java, Core Java Programming, 2013-03-01, 2013-04-15, 1, Timothy, timothy@gmail.com
+[DEBUG] [2021-06-04 16:16] <==      Total: 1
+[DEBUG] [2021-06-04 16:16] CourseErollment [student=Student [studId=1, name=Timothy, email=timothy@gmail.com, phone=null, dob=null, address=null, gender=ì—†ìŒ], course=Course [1, Timothy, Core Java Programming, Fri Mar 01 00:00:00 KST 2013,Mon Apr 15 00:00:00 KST 2013, 0]]
+[DEBUG] [2021-06-04 16:16] test02InsertCourseErollment()
+[DEBUG] [2021-06-04 16:16] ==>  Preparing: insert into COURSE_ENROLLMENT(course_id, stud_id) values(?, ?);
+[DEBUG] [2021-06-04 16:16] ==> Parameters: 1(Integer), 3(Integer)
+[DEBUG] [2021-06-04 16:16] ==>  Preparing: update course_enrollment set course_id = ?, stud_id = ? where course_id = ? and stud_id = ?
+[DEBUG] [2021-06-04 16:16] ==> Parameters: null, null, null, null
+[DEBUG] [2021-06-04 16:16] <==    Updates: 0
+[DEBUG] [2021-06-04 16:16] ==>  Preparing: delete from course_enrollment where course_id = ? and stud_id = ?
+[DEBUG] [2021-06-04 16:16] ==> Parameters: 1(Integer), 3(Integer)
+[DEBUG] [2021-06-04 16:16] <==    Updates: 0
+[DEBUG] [2021-06-04 16:17] test01SelctCourseErollmentById()
+[DEBUG] [2021-06-04 16:17] ==>  Preparing: select c.course_id, c.name as cname, c.description, c.start_date, c.end_date, s.stud_id, s.name, s.email from COURSE_ENROLLMENT ce join courses c ON ce.course_id = c.course_id join students s on ce.stud_id = s.stud_id where ce.course_id = ? and ce.stud_id = ?
+[DEBUG] [2021-06-04 16:17] ==> Parameters: 1(Integer), 1(Integer)
+[TRACE] [2021-06-04 16:17] <==    Columns: course_id, cname, description, start_date, end_date, stud_id, name, email
+[TRACE] [2021-06-04 16:17] <==        Row: 1, Quickstart Core Java, Core Java Programming, 2013-03-01, 2013-04-15, 1, Timothy, timothy@gmail.com
+[DEBUG] [2021-06-04 16:17] <==      Total: 1
+[DEBUG] [2021-06-04 16:17] CourseErollment [student=Student [studId=1, name=Timothy, email=timothy@gmail.com, phone=null, dob=null, address=null, gender=¾øÀ½], course=Course [1, Timothy, Core Java Programming, Fri Mar 01 00:00:00 KST 2013,Mon Apr 15 00:00:00 KST 2013, 0]]
+[DEBUG] [2021-06-04 16:17] test02InsertCourseErollment()
+[DEBUG] [2021-06-04 16:17] ==>  Preparing: insert into COURSE_ENROLLMENT(course_id, stud_id) values(?, ?);
+[DEBUG] [2021-06-04 16:17] ==> Parameters: 1(Integer), 3(Integer)
+[DEBUG] [2021-06-04 16:17] ==>  Preparing: update course_enrollment set course_id = ?, stud_id = ? where course_id = ? and stud_id = ?
+[DEBUG] [2021-06-04 16:17] ==> Parameters: null, null, null, null
+[DEBUG] [2021-06-04 16:17] <==    Updates: 0
+[DEBUG] [2021-06-04 16:17] ==>  Preparing: delete from course_enrollment where course_id = ? and stud_id = ?
+[DEBUG] [2021-06-04 16:17] ==> Parameters: 1(Integer), 3(Integer)
+[DEBUG] [2021-06-04 16:17] <==    Updates: 0
+[DEBUG] [2021-06-04 16:17] testDataSource()
+[DEBUG] [2021-06-04 16:17] DataSource HikariDataSource (HikariPool-1)
+[DEBUG] [2021-06-04 16:17] LoginTimeout 30
+[DEBUG] [2021-06-04 16:17] testOpenSession()
+[DEBUG] [2021-06-04 16:17] session org.apache.ibatis.session.defaults.DefaultSqlSession@25d80187
+[DEBUG] [2021-06-04 16:17] test01SelctCourseErollmentById()
+[DEBUG] [2021-06-04 16:17] ==>  Preparing: select c.course_id, c.name as cname, c.description, c.start_date, c.end_date, s.stud_id, s.name, s.email from COURSE_ENROLLMENT ce join courses c ON ce.course_id = c.course_id join students s on ce.stud_id = s.stud_id where ce.course_id = ? and ce.stud_id = ?
+[DEBUG] [2021-06-04 16:17] ==> Parameters: 1(Integer), 1(Integer)
+[TRACE] [2021-06-04 16:17] <==    Columns: course_id, cname, description, start_date, end_date, stud_id, name, email
+[TRACE] [2021-06-04 16:17] <==        Row: 1, Quickstart Core Java, Core Java Programming, 2013-03-01, 2013-04-15, 1, Timothy, timothy@gmail.com
+[DEBUG] [2021-06-04 16:17] <==      Total: 1
+[DEBUG] [2021-06-04 16:17] CourseErollment [student=Student [studId=1, name=Timothy, email=timothy@gmail.com, phone=null, dob=null, address=null, gender=¾øÀ½], course=Course [1, Timothy, Core Java Programming, Fri Mar 01 00:00:00 KST 2013,Mon Apr 15 00:00:00 KST 2013, 0]]
+[DEBUG] [2021-06-04 16:17] test02InsertCourseErollment()
+[DEBUG] [2021-06-04 16:17] ==>  Preparing: insert into COURSE_ENROLLMENT(course_id, stud_id) values(?, ?);
+[DEBUG] [2021-06-04 16:17] ==> Parameters: 1(Integer), 3(Integer)
+[DEBUG] [2021-06-04 16:17] ==>  Preparing: update course_enrollment set course_id = ?, stud_id = ? where course_id = ? and stud_id = ?
+[DEBUG] [2021-06-04 16:17] ==> Parameters: null, null, null, null
+[DEBUG] [2021-06-04 16:17] <==    Updates: 0
+[DEBUG] [2021-06-04 16:17] ==>  Preparing: delete from course_enrollment where course_id = ? and stud_id = ?
+[DEBUG] [2021-06-04 16:17] ==> Parameters: 1(Integer), 3(Integer)
+[DEBUG] [2021-06-04 16:17] <==    Updates: 0
+[DEBUG] [2021-06-04 16:17] testDataSource()
+[DEBUG] [2021-06-04 16:17] DataSource HikariDataSource (HikariPool-1)
+[DEBUG] [2021-06-04 16:17] LoginTimeout 30
+[DEBUG] [2021-06-04 16:17] testOpenSession()
+[DEBUG] [2021-06-04 16:17] session org.apache.ibatis.session.defaults.DefaultSqlSession@25d80187
+[DEBUG] [2021-06-04 16:19] test01SelctCourseErollmentById()
+[DEBUG] [2021-06-04 16:19] ==>  Preparing: select c.course_id, c.name as cname, c.description, c.start_date, c.end_date, s.stud_id, s.name, s.email from COURSE_ENROLLMENT ce join courses c ON ce.course_id = c.course_id join students s on ce.stud_id = s.stud_id where ce.course_id = ? and ce.stud_id = ?
+[DEBUG] [2021-06-04 16:19] ==> Parameters: 1(Integer), 1(Integer)
+[TRACE] [2021-06-04 16:19] <==    Columns: course_id, cname, description, start_date, end_date, stud_id, name, email
+[TRACE] [2021-06-04 16:19] <==        Row: 1, Quickstart Core Java, Core Java Programming, 2013-03-01, 2013-04-15, 1, Timothy, timothy@gmail.com
+[DEBUG] [2021-06-04 16:19] <==      Total: 1
+[DEBUG] [2021-06-04 16:19] CourseErollment [student=Student [studId=1, name=Timothy, email=timothy@gmail.com, phone=null, dob=null, address=null, gender=ì—†ìŒ], course=Course [1, Timothy, Core Java Programming, Fri Mar 01 00:00:00 KST 2013,Mon Apr 15 00:00:00 KST 2013, 0]]
+[DEBUG] [2021-06-04 16:19] test02InsertCourseErollment()
+[DEBUG] [2021-06-04 16:19] ==>  Preparing: insert into COURSE_ENROLLMENT(course_id, stud_id) values(?, ?);
+[DEBUG] [2021-06-04 16:19] ==> Parameters: 3(Integer), 1(Integer)
+[DEBUG] [2021-06-04 16:19] <==    Updates: 1
+[DEBUG] [2021-06-04 16:19] res erollment >> 1
+[DEBUG] [2021-06-04 16:19] ==>  Preparing: update course_enrollment set course_id = ?, stud_id = ? where course_id = ? and stud_id = ?
+[DEBUG] [2021-06-04 16:19] ==> Parameters: null, null, null, null
+[DEBUG] [2021-06-04 16:19] <==    Updates: 0
+[DEBUG] [2021-06-04 16:19] ==>  Preparing: delete from course_enrollment where course_id = ? and stud_id = ?
+[DEBUG] [2021-06-04 16:19] ==> Parameters: 2(Integer), 1(Integer)
+[DEBUG] [2021-06-04 16:19] <==    Updates: 0
+[DEBUG] [2021-06-04 16:20] test01SelctCourseErollmentById()
+[DEBUG] [2021-06-04 16:20] ==>  Preparing: select c.course_id, c.name as cname, c.description, c.start_date, c.end_date, s.stud_id, s.name, s.email from COURSE_ENROLLMENT ce join courses c ON ce.course_id = c.course_id join students s on ce.stud_id = s.stud_id where ce.course_id = ? and ce.stud_id = ?
+[DEBUG] [2021-06-04 16:20] ==> Parameters: 1(Integer), 1(Integer)
+[TRACE] [2021-06-04 16:20] <==    Columns: course_id, cname, description, start_date, end_date, stud_id, name, email
+[TRACE] [2021-06-04 16:20] <==        Row: 1, Quickstart Core Java, Core Java Programming, 2013-03-01, 2013-04-15, 1, Timothy, timothy@gmail.com
+[DEBUG] [2021-06-04 16:20] <==      Total: 1
+[DEBUG] [2021-06-04 16:20] CourseErollment [student=Student [studId=1, name=Timothy, email=timothy@gmail.com, phone=null, dob=null, address=null, gender=ì—†ìŒ], course=Course [1, Timothy, Core Java Programming, Fri Mar 01 00:00:00 KST 2013,Mon Apr 15 00:00:00 KST 2013, 0]]
+[DEBUG] [2021-06-04 16:20] test02InsertCourseErollment()
+[DEBUG] [2021-06-04 16:20] ==>  Preparing: insert into COURSE_ENROLLMENT(course_id, stud_id) values(?, ?);
+[DEBUG] [2021-06-04 16:20] ==> Parameters: 3(Integer), 1(Integer)
+[DEBUG] [2021-06-04 16:20] ==>  Preparing: delete from course_enrollment where course_id = ? and stud_id = ?
+[DEBUG] [2021-06-04 16:20] ==> Parameters: 3(Integer), 1(Integer)
+[DEBUG] [2021-06-04 16:20] <==    Updates: 1
+[DEBUG] [2021-06-04 16:20] res erollment >> 1
+[DEBUG] [2021-06-04 16:22] test01SelctCourseErollmentById()
+[DEBUG] [2021-06-04 16:22] ==>  Preparing: select c.course_id, c.name as cname, c.description, c.start_date, c.end_date, s.stud_id, s.name, s.email from COURSE_ENROLLMENT ce join courses c ON ce.course_id = c.course_id join students s on ce.stud_id = s.stud_id where ce.course_id = ? and ce.stud_id = ?
+[DEBUG] [2021-06-04 16:22] ==> Parameters: 1(Integer), 1(Integer)
+[TRACE] [2021-06-04 16:22] <==    Columns: course_id, cname, description, start_date, end_date, stud_id, name, email
+[TRACE] [2021-06-04 16:22] <==        Row: 1, Quickstart Core Java, Core Java Programming, 2013-03-01, 2013-04-15, 1, Timothy, timothy@gmail.com
+[DEBUG] [2021-06-04 16:22] <==      Total: 1
+[DEBUG] [2021-06-04 16:22] CourseErollment [student=Student [studId=1, name=Timothy, email=timothy@gmail.com, phone=null, dob=null, address=null, gender=ì—†ìŒ], course=Course [1, Timothy, Core Java Programming, Fri Mar 01 00:00:00 KST 2013,Mon Apr 15 00:00:00 KST 2013, 0]]
+[DEBUG] [2021-06-04 16:22] test02InsertCourseErollment()
+[DEBUG] [2021-06-04 16:22] ==>  Preparing: insert into COURSE_ENROLLMENT(course_id, stud_id) values(?, ?);
+[DEBUG] [2021-06-04 16:22] ==> Parameters: 3(Integer), 1(Integer)
+[DEBUG] [2021-06-04 16:22] <==    Updates: 1
+[DEBUG] [2021-06-04 16:22] res erollment >> 1
+[DEBUG] [2021-06-04 16:22] ==>  Preparing: update course_enrollment set course_id = ?, stud_id = ? where course_id = ? and stud_id = ?
+[DEBUG] [2021-06-04 16:22] ==> Parameters: 3(Integer), 1(Integer), 2(Integer), 1(Integer)
+[DEBUG] [2021-06-04 16:22] <==    Updates: 0
+[DEBUG] [2021-06-04 16:22] ==>  Preparing: delete from course_enrollment where course_id = ? and stud_id = ?
+[DEBUG] [2021-06-04 16:22] ==> Parameters: 2(Integer), 1(Integer)
+[DEBUG] [2021-06-04 16:22] <==    Updates: 0
+[DEBUG] [2021-06-04 16:23] test01SelctCourseErollmentById()
+[DEBUG] [2021-06-04 16:23] ==>  Preparing: select c.course_id, c.name as cname, c.description, c.start_date, c.end_date, s.stud_id, s.name, s.email from COURSE_ENROLLMENT ce join courses c ON ce.course_id = c.course_id join students s on ce.stud_id = s.stud_id where ce.course_id = ? and ce.stud_id = ?
+[DEBUG] [2021-06-04 16:23] ==> Parameters: 1(Integer), 1(Integer)
+[TRACE] [2021-06-04 16:23] <==    Columns: course_id, cname, description, start_date, end_date, stud_id, name, email
+[TRACE] [2021-06-04 16:23] <==        Row: 1, Quickstart Core Java, Core Java Programming, 2013-03-01, 2013-04-15, 1, Timothy, timothy@gmail.com
+[DEBUG] [2021-06-04 16:23] <==      Total: 1
+[DEBUG] [2021-06-04 16:23] CourseErollment [student=Student [studId=1, name=Timothy, email=timothy@gmail.com, phone=null, dob=null, address=null, gender=ì—†ìŒ], course=Course [1, Timothy, Core Java Programming, Fri Mar 01 00:00:00 KST 2013,Mon Apr 15 00:00:00 KST 2013, 0]]
+[DEBUG] [2021-06-04 16:23] test02InsertCourseErollment()
+[DEBUG] [2021-06-04 16:23] ==>  Preparing: insert into COURSE_ENROLLMENT(course_id, stud_id) values(?, ?);
+[DEBUG] [2021-06-04 16:23] ==> Parameters: 3(Integer), 1(Integer)
+[DEBUG] [2021-06-04 16:23] ==>  Preparing: update course_enrollment set course_id = ?, stud_id = ? where course_id = ? and stud_id = ?
+[DEBUG] [2021-06-04 16:23] ==> Parameters: 2(Integer), 1(Integer), 3(Integer), 1(Integer)
+[DEBUG] [2021-06-04 16:23] <==    Updates: 1
+[DEBUG] [2021-06-04 16:23] ==>  Preparing: delete from course_enrollment where course_id = ? and stud_id = ?
+[DEBUG] [2021-06-04 16:23] ==> Parameters: 2(Integer), 1(Integer)
+[DEBUG] [2021-06-04 16:23] <==    Updates: 1
+[DEBUG] [2021-06-04 16:23] res erollment >> 1
+[DEBUG] [2021-06-04 16:23] test01SelctCourseErollmentById()
+[DEBUG] [2021-06-04 16:23] ==>  Preparing: select c.course_id, c.name as cname, c.description, c.start_date, c.end_date, s.stud_id, s.name, s.email from COURSE_ENROLLMENT ce join courses c ON ce.course_id = c.course_id join students s on ce.stud_id = s.stud_id where ce.course_id = ? and ce.stud_id = ?
+[DEBUG] [2021-06-04 16:23] ==> Parameters: 1(Integer), 1(Integer)
+[TRACE] [2021-06-04 16:23] <==    Columns: course_id, cname, description, start_date, end_date, stud_id, name, email
+[TRACE] [2021-06-04 16:23] <==        Row: 1, Quickstart Core Java, Core Java Programming, 2013-03-01, 2013-04-15, 1, Timothy, timothy@gmail.com
+[DEBUG] [2021-06-04 16:23] <==      Total: 1
+[DEBUG] [2021-06-04 16:23] CourseErollment [student=Student [studId=1, name=Timothy, email=timothy@gmail.com, phone=null, dob=null, address=null, gender=ì—†ìŒ], course=Course [1, Timothy, Core Java Programming, Fri Mar 01 00:00:00 KST 2013,Mon Apr 15 00:00:00 KST 2013, 0]]
+[DEBUG] [2021-06-04 16:23] test02InsertCourseErollment()
+[DEBUG] [2021-06-04 16:23] ==>  Preparing: insert into COURSE_ENROLLMENT(course_id, stud_id) values(?, ?);
+[DEBUG] [2021-06-04 16:23] ==> Parameters: 3(Integer), 1(Integer)
+[DEBUG] [2021-06-04 16:23] <==    Updates: 1
+[DEBUG] [2021-06-04 16:23] res erollment >> 1
+[DEBUG] [2021-06-04 16:23] ==>  Preparing: update course_enrollment set course_id = ?, stud_id = ? where course_id = ? and stud_id = ?
+[DEBUG] [2021-06-04 16:23] ==> Parameters: 2(Integer), 1(Integer), 3(Integer), 1(Integer)
+[DEBUG] [2021-06-04 16:23] <==    Updates: 1
+[DEBUG] [2021-06-04 16:23] ==>  Preparing: delete from course_enrollment where course_id = ? and stud_id = ?
+[DEBUG] [2021-06-04 16:23] ==> Parameters: 2(Integer), 1(Integer)
+[DEBUG] [2021-06-04 16:23] <==    Updates: 1
+[DEBUG] [2021-06-04 16:23] res erollment >> 1
+[DEBUG] [2021-06-04 16:23] test01SelctCourseErollmentById()
+[DEBUG] [2021-06-04 16:23] ==>  Preparing: select c.course_id, c.name as cname, c.description, c.start_date, c.end_date, s.stud_id, s.name, s.email from COURSE_ENROLLMENT ce join courses c ON ce.course_id = c.course_id join students s on ce.stud_id = s.stud_id where ce.course_id = ? and ce.stud_id = ?
+[DEBUG] [2021-06-04 16:23] ==> Parameters: 1(Integer), 1(Integer)
+[TRACE] [2021-06-04 16:23] <==    Columns: course_id, cname, description, start_date, end_date, stud_id, name, email
+[TRACE] [2021-06-04 16:23] <==        Row: 1, Quickstart Core Java, Core Java Programming, 2013-03-01, 2013-04-15, 1, Timothy, timothy@gmail.com
+[DEBUG] [2021-06-04 16:23] <==      Total: 1
+[DEBUG] [2021-06-04 16:23] CourseErollment [student=Student [studId=1, name=Timothy, email=timothy@gmail.com, phone=null, dob=null, address=null, gender=ì—†ìŒ], course=Course [1, Timothy, Core Java Programming, Fri Mar 01 00:00:00 KST 2013,Mon Apr 15 00:00:00 KST 2013, 0]]
+[DEBUG] [2021-06-04 16:23] test02InsertCourseErollment()
+[DEBUG] [2021-06-04 16:23] ==>  Preparing: insert into COURSE_ENROLLMENT(course_id, stud_id) values(?, ?);
+[DEBUG] [2021-06-04 16:23] ==> Parameters: 3(Integer), 1(Integer)
+[DEBUG] [2021-06-04 16:23] <==    Updates: 1
+[DEBUG] [2021-06-04 16:23] res erollment >> 1
+[DEBUG] [2021-06-04 16:23] ==>  Preparing: update course_enrollment set course_id = ?, stud_id = ? where course_id = ? and stud_id = ?
+[DEBUG] [2021-06-04 16:23] ==> Parameters: 2(Integer), 1(Integer), 3(Integer), 1(Integer)
+[DEBUG] [2021-06-04 16:23] <==    Updates: 1
+[DEBUG] [2021-06-04 16:23] res erollment >> 1
+[DEBUG] [2021-06-04 16:23] ==>  Preparing: delete from course_enrollment where course_id = ? and stud_id = ?
+[DEBUG] [2021-06-04 16:23] ==> Parameters: 2(Integer), 1(Integer)
+[DEBUG] [2021-06-04 16:23] <==    Updates: 1
+[DEBUG] [2021-06-04 16:23] res erollment >> 1
+[DEBUG] [2021-06-04 16:23] test01SelctCourseErollmentById()
+[DEBUG] [2021-06-04 16:23] ==>  Preparing: select c.course_id, c.name as cname, c.description, c.start_date, c.end_date, s.stud_id, s.name, s.email from COURSE_ENROLLMENT ce join courses c ON ce.course_id = c.course_id join students s on ce.stud_id = s.stud_id where ce.course_id = ? and ce.stud_id = ?
+[DEBUG] [2021-06-04 16:23] ==> Parameters: 1(Integer), 1(Integer)
+[TRACE] [2021-06-04 16:23] <==    Columns: course_id, cname, description, start_date, end_date, stud_id, name, email
+[TRACE] [2021-06-04 16:23] <==        Row: 1, Quickstart Core Java, Core Java Programming, 2013-03-01, 2013-04-15, 1, Timothy, timothy@gmail.com
+[DEBUG] [2021-06-04 16:23] <==      Total: 1
+[DEBUG] [2021-06-04 16:23] CourseErollment [student=Student [studId=1, name=Timothy, email=timothy@gmail.com, phone=null, dob=null, address=null, gender=¾øÀ½], course=Course [1, Timothy, Core Java Programming, Fri Mar 01 00:00:00 KST 2013,Mon Apr 15 00:00:00 KST 2013, 0]]
+[DEBUG] [2021-06-04 16:23] test02InsertCourseErollment()
+[DEBUG] [2021-06-04 16:23] ==>  Preparing: insert into COURSE_ENROLLMENT(course_id, stud_id) values(?, ?);
+[DEBUG] [2021-06-04 16:23] ==> Parameters: 3(Integer), 1(Integer)
+[DEBUG] [2021-06-04 16:23] <==    Updates: 1
+[DEBUG] [2021-06-04 16:23] res erollment >> 1
+[DEBUG] [2021-06-04 16:23] ==>  Preparing: update course_enrollment set course_id = ?, stud_id = ? where course_id = ? and stud_id = ?
+[DEBUG] [2021-06-04 16:23] ==> Parameters: 2(Integer), 1(Integer), 3(Integer), 1(Integer)
+[DEBUG] [2021-06-04 16:23] <==    Updates: 1
+[DEBUG] [2021-06-04 16:23] res erollment >> 1
+[DEBUG] [2021-06-04 16:23] ==>  Preparing: delete from course_enrollment where course_id = ? and stud_id = ?
+[DEBUG] [2021-06-04 16:23] ==> Parameters: 2(Integer), 1(Integer)
+[DEBUG] [2021-06-04 16:23] <==    Updates: 1
+[DEBUG] [2021-06-04 16:23] res erollment >> 1
+[DEBUG] [2021-06-04 16:23] testDataSource()
+[DEBUG] [2021-06-04 16:23] DataSource HikariDataSource (HikariPool-1)
+[DEBUG] [2021-06-04 16:23] LoginTimeout 30
+[DEBUG] [2021-06-04 16:23] testOpenSession()
+[DEBUG] [2021-06-04 16:23] session org.apache.ibatis.session.defaults.DefaultSqlSession@3e8d69b5

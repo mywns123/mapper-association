@@ -1,4 +1,4 @@
-package spring5_mybatis_study.mapper;
+package spring5_mybatis_study.mappers;
 
 import java.util.List;
 
